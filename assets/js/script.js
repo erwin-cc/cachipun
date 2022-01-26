@@ -29,7 +29,8 @@ function cachipun(){
 
         /*Comparar jugada del usuario con la de la máquina, definir quien gana y asignar una victoria.
         Para ello se tomará cada posible opcion del jugador y se comparará con cada posible opcion de la máquina.
-        Esto da un total de 9 comparaciones a realizar (3 por cada opcion del usuario)*/
+        Esto da un total de 9 comparaciones a realizar (3 por cada opcion del usuario)
+        * Por cada juego, se debe mostrar el resultado inmediatamente.*/
         var victoriasJugador=0;
         var victoriasMaquina=0;
         switch (optJugador) {
@@ -87,6 +88,7 @@ function cachipun(){
 
 }
 
+//Llamado de la función
 $(function(){
     cachipun()
 });
@@ -101,4 +103,3 @@ $(function(){
 
 
 
-//Por cada juego, se debe mostrar el resultado inmediatamente.
