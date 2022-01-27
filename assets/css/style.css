@@ -1,6 +1,7 @@
 * {
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
 
 p {
@@ -15,6 +16,7 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 5vh;
 }
 
@@ -37,8 +39,11 @@ header p {
 }    
 
 /*Primera sección*/
+/*Reglas*/
+
 .reglas {
-    flex: 40%;
+    flex: 0 0 400px;
+    height: 160px;
     min-width: 400px;
     font-family: 'Noto Sans Mono', monospace;
     color: #fff;
@@ -47,8 +52,141 @@ header p {
     padding: 30px;
     border: 3px solid #000;
     border-radius: 20px;
+    margin:auto;
 }
 
+/*Selector*/
 .selector {
+    display:none;
     flex: 60%;
+    height: 160px;
+    min-width: 400px;
+    max-width: 600px;
+    color: #fff;  
+    background-color: rgb(61, 0, 102, 0.8);
+    padding: 15px;
+    border: 3px solid #000;
+    border-radius: 20px;
+    margin: 15px auto;
+    text-align: center;
 }
+
+.options {
+    padding-top: 5px;
+    font-size: 50px;
+}
+
+.options i{
+    color: #ffcc00;
+    padding: 0 30px;
+}
+
+#piedra {
+    animation: iluminacion 3s linear 0s infinite normal;
+}
+
+#piedra:hover {
+    font-size: 55px;
+    color: #ffff00;
+    text-shadow: 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5);
+}
+
+#papel {
+    animation: iluminacion 3s linear 1s infinite normal;
+}
+
+#papel:hover {
+    font-size: 55px;
+    color: #ffff00;
+    text-shadow: 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5);
+}
+
+#tijera {
+    animation: iluminacion 3s linear 2s infinite normal;
+}
+
+#tijera:hover {
+    font-size: 55px;
+    color: #ffff00;
+    text-shadow: 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5);
+}
+
+/*Botón de inicio*/
+
+#start{
+    flex: 60%;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+#start button{
+    font-size: 20px;
+    color: #ffff00;
+    font-family: 'Noto Sans Mono', monospace;
+    background-color: rgb(61, 0, 102, 0.8);
+    padding: 15px;
+    border: 4px solid #000;
+    border-radius: 40px;
+    box-shadow: -5px -5px 8px #000 inset;
+} 
+
+/*Ventanas interactivas de selección*/
+
+.contenedorVentana {
+    flex: 0 0 210px;
+    margin: 30px 40px;
+    text-align: center;
+}
+
+.ventana {
+    height: 210px;
+    min-width: 210px;
+    border: 6px solid #000;
+    border-radius: 20px;
+}
+
+.tituloVentana {
+    font-family: 'Noto Sans Mono', monospace;
+    color: #000;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+
+/*Botón de término*/
+#again{
+    display:none;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+#again button {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Noto Sans Mono', monospace;
+    text-shadow: 2px 2px 2px #000;
+    background-color: #e65c00;
+    padding: 15px 30px;
+    border: 4px solid #000;
+    border-radius: 40px;
+    box-shadow: -5px -5px 8px #000 inset;
+}
+
+/*Control de Animaciones*/
+@keyframes iluminacion {
+    0%   {color: #ffcc00;text-shadow: none;}
+    15%   {color: #ffcc00;text-shadow: none;}
+    16%  {color: #ffff00; text-shadow: 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5);}
+    32%  {color: #ffff00; text-shadow: 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5);}
+    33% {color: #ffcc00;text-shadow: none;}
+    100% {color: #ffcc00;text-shadow: none;}
+}
+
+.animationOff {
+    animation: iluminacion 0s linear 0s infinite normal !important;
+}
+
