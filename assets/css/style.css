@@ -10,14 +10,39 @@ p {
 }
 
 body {
-    background-color: #2eb82e;
+    background-color: #009933;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 5vh;
+    margin: 4vh 5vw;
+    align-items: center;
+}
+
+
+.col-50 {
+    flex: 50%;
+    text-align: center;
+}
+
+.col-50-top {
+    flex: 50%;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.rotar-y-180 {
+    transform: rotateY(180deg);
+}
+
+.rotar-z-90 {
+    transform: rotateZ(90deg);
+}
+
+.rotar-z-n90 {
+    transform: rotateX(180deg) rotateZ(-90deg);
 }
 
 /*header*/
@@ -42,8 +67,8 @@ header p {
 /*Reglas*/
 
 .reglas {
-    flex: 0 0 400px;
     height: 160px;
+    max-width: 400px;
     min-width: 400px;
     font-family: 'Noto Sans Mono', monospace;
     color: #fff;
@@ -58,17 +83,15 @@ header p {
 /*Selector*/
 .selector {
     display:none;
-    flex: 60%;
     height: 160px;
     min-width: 400px;
-    max-width: 600px;
+    max-width: 500px;
     color: #fff;  
     background-color: rgb(61, 0, 102, 0.8);
     padding: 15px;
     border: 3px solid #000;
     border-radius: 20px;
     margin: 15px auto;
-    text-align: center;
 }
 
 .options {
@@ -114,7 +137,6 @@ header p {
 /*Botón de inicio*/
 
 #start{
-    flex: 60%;
     min-width: 200px;
     max-width: 300px;
     margin: 15px auto;
@@ -132,30 +154,8 @@ header p {
     box-shadow: -5px -5px 8px #000 inset;
 } 
 
-/*Ventanas interactivas de selección*/
 
-.contenedorVentana {
-    flex: 0 0 210px;
-    margin: 30px 40px;
-    text-align: center;
-}
-
-.ventana {
-    height: 210px;
-    min-width: 210px;
-    border: 6px solid #000;
-    border-radius: 20px;
-}
-
-.tituloVentana {
-    font-family: 'Noto Sans Mono', monospace;
-    color: #000;
-    font-size: 1rem;
-    margin-bottom: 6px;
-}
-
-
-/*Botón de término*/
+/*Botón jugar de nuevo*/
 #again{
     display:none;
     min-width: 200px;
@@ -176,6 +176,111 @@ header p {
     box-shadow: -5px -5px 8px #000 inset;
 }
 
+/*Segunda seccion: Ventanas interactivas de selección y puntajes*/
+
+#ventanas {
+    display: none;
+}
+
+.ventana {
+    position:relative;
+    height: 210px;
+    width: 210px;
+    border: 6px solid #000;
+    border-radius: 20px;
+    margin: 10px 20px;
+    text-align: center;
+    line-height: 210px;
+    color:#fff;
+    font-size: 100px;
+}
+
+#ventanaJugador, #ventanaMaquina {
+    display: inline-block;
+}
+
+#ventanaJugador i[class^="fas"] {
+    position: absolute;
+    top: 25%;
+    animation: aparecerIzq 0.3s ease-out 0s 1 normal;
+    animation-fill-mode: forwards;
+}
+
+#ventanaMaquina i[class^="fas"] {
+    position: absolute;
+    top: 25%;
+    animation: aparecerDer 0.3s ease-out 0s 1 normal;
+    animation-fill-mode: forwards;
+}
+
+.tituloVentana {
+    font-family: 'Noto Sans Mono', monospace;
+    color: #000;
+    font-size: 1rem;
+}
+
+#indicadorRonda {
+    display: none;
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: bolder;
+    color: #000;
+    font-size: 1.7rem;
+}
+
+/*Puntajes*/
+#scores {
+    width: 430px;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.6);
+    border: 3px solid #000;
+    border-radius: 20px;
+    display: none;
+    text-align: center;
+    font-family: 'Noto Sans Mono', monospace;
+    color: #000;
+    margin: 34px auto;
+}
+
+#scores h3{
+    font-family: 'Noto Sans Mono', monospace;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+table {
+    margin: auto;
+}
+
+td, th {
+    padding: 4px 10px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+i[class="far fa-circle"] {
+    color: #fff;
+}
+
+i[class="fas fa-times"] {
+    color: #cc0000;
+}
+
+i[class="fas fa-check"] {
+    color: #009933;
+}
+
+/*Resultado*/
+
+#resultado {
+    display:block;
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
+}
+
 /*Control de Animaciones*/
 @keyframes iluminacion {
     0%   {color: #ffcc00;text-shadow: none;}
@@ -184,6 +289,16 @@ header p {
     32%  {color: #ffff00; text-shadow: 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5), 0 0 8px rgba(255,255,255,.5);}
     33% {color: #ffcc00;text-shadow: none;}
     100% {color: #ffcc00;text-shadow: none;}
+}
+
+@keyframes aparecerIzq {
+    0%   {color: rgba(255,255,255,0); right:75%;}
+    100%   {color: rgba(255,255,255,1); right:25%;}
+}
+
+@keyframes aparecerDer {
+    0%   {color: rgba(255,255,255,0); right:-25%;}
+    100%   {color: rgba(255,255,255,1); right:25%;}
 }
 
 .animationOff {

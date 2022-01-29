@@ -21,53 +21,81 @@
         </p>
     </header>
     <section class="row">
-        <div class="reglas">
-            <p><b>Reglas del juego: </b><br>
-               Piedra rompe tijeras &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-hand-rock"></i> > <i class="fas fa-hand-scissors"></i><br>
-               Tijeras rompen papel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-hand-scissors"></i> > <i class="fas fa-hand-paper"></i><br>
-               Papel envuelve a piedra &nbsp;&nbsp;&nbsp;<i class="fas fa-hand-paper"></i> > <i class="fas fa-hand-rock"></i>
-            </p>
-        </div>
-        <div class="selector">
-            <div class="title">
-                <h3>
-                    <b>Escoja su opción.</b>
-                </h3>
-            </div>
-            <div class="options">
-                <i id="piedra" class="fas fa-hand-rock"></i>
-                <i id="papel" class="fas fa-hand-paper"></i>
-                <i id="tijera" class="fas fa-hand-scissors"></i>
+        <div class="col-50">
+            <div class="reglas">
+                <p><b>Reglas del juego: </b><br>
+                   Piedra rompe tijeras &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-hand-rock"></i> > <i class="fas fa-hand-scissors"></i><br>
+                   Tijeras rompen papel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-hand-scissors"></i> > <i class="fas fa-hand-paper"></i><br>
+                   Papel envuelve a piedra &nbsp;&nbsp;&nbsp;<i class="fas fa-hand-paper"></i> > <i class="fas fa-hand-rock"></i>
+                </p>
             </div>
         </div>
-        <div id="start">
-            <button type="button"><b>Iniciar Juego</b></button>
+        <div class="col-50">
+            <div class="selector">
+                <div class="title">
+                    <h3>
+                        <b>Escoja su opción.</b>
+                    </h3>
+                </div>
+                <div class="options">
+                    <i id="piedra" data-opcion-jugador="1" class="fas fa-hand-rock"></i>
+                    <i id="papel" data-opcion-jugador="2"class="fas fa-hand-paper"></i>
+                    <i id="tijera" data-opcion-jugador="3"class="fas fa-hand-scissors"></i>
+                </div>
+            </div>
+            <div id="start">
+                <button type="button"><b>Iniciar Juego</b></button>
+            </div>
+            <div id="resultado">
+                <p></p>
+            </div>
+            <div id="again">
+                <button type="button"><b>Jugar de nuevo</b></button>
+            </div>
         </div>
     </section>
 
     <section id="ventanas">
         <div class="row">
-            <div id="ventanaJugador" class="contenedorVentana">
-                <div class="tituloVentana">
-                    <p><b>Jugador</b></p>
-                </div>
-                <div class="ventana">
+            <div class="col-50-top">
+                <div id="ventanaJugador">
+                    <div class="tituloVentana">
+                        <p><b>Jugador</b></p>
+                    </div>
+                    <div class="ventana">
 
+                    </div>
+                </div>
+                <div id="ventanaMaquina">
+                    <div class="tituloVentana">
+                        <p><b>Máquina</b></p>
+                    </div>
+                    <div class="ventana">
+
+                    </div>
+                </div>
+                <div id="indicadorRonda">
+                    <p></p>
                 </div>
             </div>
-            <div id="ventanaMaquina" class="contenedorVentana">
-                <div class="tituloVentana">
-                    <p><b>Máquina</b></p>
-                </div>
-                <div class="ventana">
-
+            <div class="col-50-top">
+                <div id="scores">
+                    <h3>Tabla de Resultados</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ronda</th>
+                                <th>Jugador</th>
+                                <th>Máquina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="scores">
-
     </section>
 
     <div id="again">
