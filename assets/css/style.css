@@ -281,6 +281,22 @@ i[class="fas fa-check"] {
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
 }
 
+/*Footer*/
+footer {
+    position:fixed;
+    bottom: 0px;
+    right: 5vw;
+}
+
+footer h6{
+    font-family: 'Noto Sans Mono', monospace;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    margin:0;
+}
+
 /*Control de Animaciones*/
 @keyframes iluminacion {
     0%   {color: #ffcc00;text-shadow: none;}
